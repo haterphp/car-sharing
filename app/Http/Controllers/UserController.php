@@ -30,7 +30,7 @@ class UserController extends Controller
             'error' => [
                 'code' => 401,
                 'message' => 'Unauthorized',
-                'errors ' => [
+                'errors' => [
                     'phone' => ['phone or password incorrect']
                 ]
             ]

@@ -17,6 +17,6 @@ class ApiRequest extends FormRequest
                     'message' => $message,
                     'errors' => $validator->errors()
                 ]
-            ]));
+            ], $code));
     }
 }

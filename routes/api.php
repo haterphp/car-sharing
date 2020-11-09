@@ -22,6 +22,7 @@ Route::get('booking/history', [BookingController::class, 'history'])->middleware
 Route::patch('booking/{booking}/close', [BookingController::class, 'close'])->middleware('auth:api');
 
 Route::prefix('api')->group(function (){
+    Route::get('logout', [UserController::class, 'logout'])->middleware(['auth:api']);
     Route::post('register', [UserController::class, 'store']);
     Route::post('login', [UserController::class, 'login']);
     Route::get('branch', [BranchController::class, 'index']);

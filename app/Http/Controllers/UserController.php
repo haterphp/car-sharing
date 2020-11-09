@@ -37,6 +37,12 @@ class UserController extends Controller
         ], 200);
     }
 
+    public function logout()
+    {
+        Auth::user()->logout();
+        return response()->noContent(204);
+    }
+
     public function view()
     {
         return response()->json([

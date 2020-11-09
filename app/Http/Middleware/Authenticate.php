@@ -25,6 +25,6 @@ class Authenticate extends Middleware
                     'code' => 401,
                     'message' => 'Unauthorized'
                 ]
-            ]), 401);
+            ], 401));
     }
 }

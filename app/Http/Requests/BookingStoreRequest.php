@@ -18,7 +18,7 @@ class BookingStoreRequest extends ApiRequest
         $cars = BookingCar::with('booking')->get();
 
         return [
-            'start_date' => 'required|date|before:today',
+            'start_date' => 'required|date|after:today',
             'end_date' => 'required|date|after:start_date',
             'cars' => 'required|array',
             'cars.*' => ['integer', 'exists:cars,id', function($attr, $value, $fail) use ($cars){

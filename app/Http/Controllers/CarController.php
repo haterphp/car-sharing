@@ -11,11 +11,15 @@ class CarController extends Controller
     {
         $result = Car::with('branch')
             ->ofMark($request->mark ?? '')
-            ->ofModel($request->model ?? '');
+            ->ofModel($request->model ?? '')
+            ->get();
+
+        if (!$request->mark)
+            $result = [];
 
         return response()->json([
             'data' => [
-                'items' => $result->get()
+                'items' => $result
             ]
         ], 200);
     }

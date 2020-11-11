@@ -34,7 +34,7 @@ class UserController extends Controller
                     'phone' => ['phone or password incorrect']
                 ]
             ]
-        ], 200);
+        ], 401);
     }
 
     public function logout()

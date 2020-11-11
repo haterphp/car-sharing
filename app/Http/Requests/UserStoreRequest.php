@@ -18,7 +18,7 @@ class UserStoreRequest extends ApiRequest
             'last_name' => 'required|string',
             'patronymic' => 'string',
             'phone' => 'required|string|unique:users,phone|size:11',
-            'birth_date' => 'required|date|before:today',
+            'birth_date' => 'required|date|after:today',
             'passport_series' => 'required|string|size:4',
             'passport_number' => 'required|string|size:6',
             'password' => 'required|string',
